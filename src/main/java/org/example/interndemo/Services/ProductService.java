@@ -13,8 +13,8 @@ import java.util.List;
 @Service
 public class ProductService {
 
-    private  ProductRepository productRepository;
-    private  ClientRepository clientRepository;
+    private  final ProductRepository productRepository;
+    private  final ClientRepository clientRepository;
 
     public ProductService(ProductRepository productRepository, ClientRepository clientRepository) {
         this.productRepository = productRepository;

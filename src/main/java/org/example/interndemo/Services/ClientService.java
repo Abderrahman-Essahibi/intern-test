@@ -3,8 +3,10 @@ package org.example.interndemo.Services;
 
 
 
+import org.example.interndemo.DTOs.ClientDTO;
 import org.example.interndemo.Entities.Client;
 import org.example.interndemo.Repositories.ClientRepository;
+import org.example.interndemo.mappers.ClientMapper;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -12,7 +14,7 @@ import java.util.List;
 @Service
 public class ClientService {
 
-    private ClientRepository clientRepository;
+    private final ClientRepository clientRepository;
 
     public ClientService(ClientRepository clientRepository) {
         this.clientRepository = clientRepository;
@@ -22,8 +24,11 @@ public class ClientService {
         return clientRepository.save(client);
     }
 
-    public List<Client> getAllClients() {
-        return clientRepository.findAll();
+    public List<ClientDTO> getAllClients() {
+        return clientRepository.findAll()
+                .stream()
+                .map(client -> ClientMapper.toDto(client))
+                .toList();
     }
 
     public Client getClientById(Long id) {

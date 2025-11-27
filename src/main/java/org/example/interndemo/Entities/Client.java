@@ -23,7 +23,7 @@ public class Client {
     private String lastName;
     private String email;
 
-    @OneToMany(mappedBy = "client", cascade = CascadeType.ALL, orphanRemoval = true)
-    @JsonManagedReference
+    @OneToMany(mappedBy = "client", orphanRemoval = true)
+    @JsonIgnore
     private List<Product> products;
 }

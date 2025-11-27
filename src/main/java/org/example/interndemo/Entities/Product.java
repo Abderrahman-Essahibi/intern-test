@@ -20,10 +20,8 @@ public class Product {
     private Double price;
     private int quantity;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne
     @JoinColumn(name = "client_id")
-    @JsonBackReference
-
     private Client client;
 }
 

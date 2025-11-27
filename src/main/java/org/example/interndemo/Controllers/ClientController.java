@@ -1,6 +1,7 @@
 package org.example.interndemo.Controllers;
 
 
+import org.example.interndemo.DTOs.ClientDTO;
 import org.example.interndemo.Entities.Client;
 import org.example.interndemo.Services.ClientService;
 import org.springframework.web.bind.annotation.*;
@@ -24,7 +25,7 @@ public class ClientController {
     }
 
     @GetMapping
-    public List<Client> getAll() {
+    public List<ClientDTO> getAll() {
         return clientService.getAllClients();
     }
 

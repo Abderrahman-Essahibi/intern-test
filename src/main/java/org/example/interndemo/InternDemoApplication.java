@@ -20,11 +20,11 @@ public class InternDemoApplication {
         return args -> {
 
             Client c1 = clientRepository.save(
-                    Client.builder().firstName("John").lastName("Doe").email("john@gmail.com").build()
+                    Client.builder().firstName("abdo").lastName("sahibi").email("john@gmail.com").build()
             );
 
             Client c2 = clientRepository.save(
-                    Client.builder().firstName("Sarah").lastName("Smith").email("sarah@gmail.com").build()
+                    Client.builder().firstName("Sarah").lastName("toto").email("sarah@gmail.com").build()
             );
 
             productRepository.save(
@@ -32,14 +32,12 @@ public class InternDemoApplication {
             );
 
             productRepository.save(
-                    Product.builder().name("Phone").price(499.99).quantity(10).client(c1).build()
+                    Product.builder().name("Phone").price(4999.0).quantity(10).client(c1).build()
             );
 
             productRepository.save(
-                    Product.builder().name("Tablet").price(299.99).quantity(5).client(c2).build()
+                    Product.builder().name("Tablet").price(2996.00).quantity(5).client(c2).build()
             );
-
-            System.out.println("✔ Sample Clients & Products created!");
         };
 }
 }
